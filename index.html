@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+    />
+    <link
+      rel="icon"
+      href="https://cdn.glitch.global/efa8cc51-17b4-422b-9772-e18d42167104/43eb17cb-e1cd-4422-9473-ee940386d8c6.pngwing.com.png?v=1681086811193o"
+    />
+    <meta
+      name="description"
+      content="Baixe seus vídeos favoritos do YouTube a qualquer momento no seu celular ou computador com o BaixarYoutube. Rápido, fácil de usar e gratuito."
+    />
+    <title>
+      BaixarYoutube - Baixe vídeos em qualquer momento no celular ou computador
+    </title>
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="keywords"
+      content="BaixarYoutube, baixar vídeos, YouTube, celular, computador, gratuito"
+    />
+    <meta name="author" content="WebFerramentas" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js"></script>
+  </head>
+  <body>
+    <div
+      style="
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+        width: 100%;
+        height: 90px;
+        position: absolute;
+        z-index: -1;
+      "
+    >
+      <div style="background-color: #f19988; width: 100%; height: 100%"></div>
+    </div>
+    <header class="sub_header">
+      <div style="display: flex">
+        <img
+          style="padding-top: 8px"
+          width="50"
+          height="50"
+          src="assets/logo.png"
+        />
+
+        <h2 style="padding-left: 25px; color: black">Youtube</h2>
+        <h2 style="color: white">Downloader</h2>
+      </div>
+    </header>
+    <main>
+      <h2 class="title" style="text-align: left; font-size: 1.2em; ">Baixar vídeos</h2>
+      <p style="text-align: left; font-size: 0.8em;">
+        Baixe vídeos e músicas do YouTube facilmente! Cole o link do vídeo ou
+        música em nossa plataforma e comece o download imediatamente. Sem
+        instalar software ou navegar por páginas intermináveis. Com nossa
+        ferramenta intuitiva, você pode baixar seus conteúdos favoritos em
+        segundos e assisti-los offline quando quiser. Experimente agora e
+        desfrute do conteúdo do YouTube em seu dispositivo!
+      </p>
+
+      <div
+        style="
+          display: flex;
+          justify-content: space-around;
+          flex-wrap: wrap;
+          max-width: 550px;
+          margin-left: auto;
+          margin-right: auto;
+        "
+      >
+        <div
+          style="
+            flex-shrink: 1;
+            flex-grow: 1;
+            flex-basis: 100%;
+            text-align: center;
+           
+          "
+        >
+          <h2 style="font-size: 0.9em; text-align: center;" class="title">Escolha a sua variante</h2>
+        </div>
+
+        <a href="https://www.youtube.com/hashtag/shorts" target="_blank">
+          <div class="initial-card">
+            <div
+              class="icon-suported"
+              style="
+                background-color: white;
+                background-image: url(https://cdn.glitch.global/efa8cc51-17b4-422b-9772-e18d42167104/shorts.png?v=1681281850298);
+              "
+            ></div>
+
+            <h5>SHORTS</h5>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/GAMING" target="_blank">
+          <div class="initial-card">
+            <div
+              class="icon-suported"
+              style="
+                background-color: white;
+                background-image: url(https://cdn.glitch.global/efa8cc51-17b4-422b-9772-e18d42167104/gaming.png?v=1681281863834);
+              "
+            ></div>
+
+            <h5>GAMING</h5>
+          </div>
+        </a>
+
+        <a href="https://music.youtube.com/" target="_blank">
+          <div class="initial-card">
+            <div
+              class="icon-suported"
+              style="
+                background-color: white;
+                background-image: url(https://cdn.glitch.global/efa8cc51-17b4-422b-9772-e18d42167104/youtubemusic.png?v=1681281853500);
+              "
+            ></div>
+
+            <h5>MUSIC</h5>
+          </div>
+        </a>
+      </div>
+
+      <div
+        style="
+          margin-top: 30px;
+          display: flex;
+          max-width: 650px;
+          margin-left: auto;
+          margin-right: auto;
+        "
+        id="input-div"
+      >
+        <input
+          class="link_input"
+          type="text"
+          placeholder="Insira o link aqui"
+          id="id_url"
+        />
+        <button id="button-start" class="button-start" onclick="convertClick()">
+          <b> CONVERTER </b>
+        </button>
+      </div>
+
+      <div style="margin-top: 50px; display: none" id="loading-search">
+        <img
+          src="https://cdn.glitch.global/efa8cc51-17b4-422b-9772-e18d42167104/loading.gif?v=1681006443856"
+        />
+      </div>
+
+      <div id="video-card" class="card-video-infor" style="display: none">
+        <div style="display: flex; margin: 10px; flex-direction: column">
+          <p
+            style="
+              font-size: 0.8rem;
+              color: white;
+              text-align: left;
+              background-color: #0000009f;
+              padding: 18px;
+              border-radius: 10px;
+              z-index: 10;
+            "
+            id="video-name"
+          >
+            Video name
+          </p>
+
+          <video
+            id="video-player"
+            autoplay="false"
+            style="position: relative"
+            controls=""
+        
+            name="media"
+          >
+            <source
+              id="video-player-src"
+              src="https://rr3---sn-0aug5oxujx-4vge.googlevideo.com/videoplayback?expire=1681445561&amp;ei=WX44ZNfvLsWd8wTAhJ6oAQ&amp;ip=34.207.165.108&amp;id=o-AGZ4JpUcWmrcxzST7yxhPpey0BtmC4ziB3SjlwSzYEX6&amp;itag=18&amp;source=youtube&amp;requiressl=yes&amp;vprv=1&amp;xtags=heaudio%3Dtrue&amp;mime=video%2Fmp4&amp;ns=e37PBJk7SxxdWWJ-7InOiuMM&amp;cnr=14&amp;ratebypass=yes&amp;dur=196.673&amp;lmt=1666507000219442&amp;fexp=24007246&amp;c=WEB&amp;txp=5538434&amp;n=kIenDmYcmZSas6hiI9p&amp;sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cxtags%2Cmime%2Cns%2Ccnr%2Cratebypass%2Cdur%2Clmt&amp;sig=AOq0QJ8wRAIgaKSKBHxT5beRFIfU3zb1WVuQgeESTAGaCTuAk3HV4GsCIH2OjI8oMB6ADmUaEY6FpMplWlEVQl1Zx1SVXdLVxc2E&amp;redirect_counter=1&amp;rm=sn-p5qee67e&amp;req_id=dbb0d2d5fd77a3ee&amp;cms_redirect=yes&amp;ipbypass=yes&amp;mh=_a&amp;mip=2804:7948:214a:b200:151a:5b40:1f8e:63f9&amp;mm=31&amp;mn=sn-0aug5oxujx-4vge&amp;ms=au&amp;mt=1681423025&amp;mv=m&amp;mvi=3&amp;pl=36&amp;lsparams=ipbypass,mh,mip,mm,mn,ms,mv,mvi,pl&amp;lsig=AG3C_xAwRQIgb0WRlLCnIgUnxpGrvhEO9NEBejU_WaghNxU9FoFZm6wCIQCMGm5yIqgqek9Pz9vw43RmLt-216ioJ72ZNa6NUF9NAg%3D%3D"
+              type="video/mp4"
+            />
+
+
+          </video>
+          <button onClick="clickDownloadButton()" id="downlaod_url" href="" class="download-button"  ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+          </svg> DOWNLOAD</button>
+          <audio
+            controls
+            autoplay="false"
+            name="media"
+            id="audio-player"
+            style="
+              margin: 2px;
+              margin-top: 20px;
+              width: 100%;
+              z-index: 999999999;
+            "
+          >
+            AUDIO
+            <source
+              src=""
+              type="audio/webm"
+              id="audio-player-src"
+              style="border-radius: 0px; width: 100%"
+            />
+          </audio>
+        </div>
+      </div>
+
+      <hr style="margin-top: 60px" />
+      <div>
+        <h3 class="title" style="margin-left: 20px;">Como usar</h3>
+        <ol class="instructions">
+          
+          <li>Pesquise o video na plataforma do youtube</li>
+          <li>Clique no video desejado</li>
+          <li>Clique em compartilhar video</li>
+          <li>Copie o link do video</li>
+          <li>Volte neste site e coloque o link do video no campo.</li>
+        </ol>
+      </div>
+    </main>
+    <footer class="footer"></footer>
+  </body>
+</html>
