@@ -4,8 +4,6 @@ let lastVideoObject;
 let api_url = "https://youtube-downloader-api2.glitch.me"
 let lastVideoUrl = "" 
 
-setTimeout(updateUserCount, 0)
-
 function isValidYoutubeVideoLink(link) {
   var regex =
     /^(https?\:\/\/)?(www\.)?(youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9\-_]{11})$/;
